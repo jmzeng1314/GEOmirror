@@ -15,7 +15,7 @@ library(GEOmirror)
 Then use it to download GEO dataset, as below :
 
 ```
-geoChina('gse1009') 
+geoChina('GSE1009') 
 geoChina('GSE27533') 
 geoChina('GSE95166') 
 ```

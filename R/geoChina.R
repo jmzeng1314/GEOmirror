@@ -28,7 +28,7 @@ geoChina <- function(gse='GSE2546',mirror='tercent'){
   if(mirror=='tercent'){
     up='http://49.235.27.111'
   }
-  tpf=tempfile()
+  tpf=paste0(gse, '_eSet.Rdata')
   download.file(paste0(up,down),tpf)
   suppressWarnings(load(tpf))
   return(gset)
