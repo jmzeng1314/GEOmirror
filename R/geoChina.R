@@ -18,6 +18,7 @@ geoChina <- function(gse='GSE2546',mirror='tercent'){
   # eSet=getGEO('GSE2546', destdir=".", AnnotGPL = F, getGPL = F)
   # http://49.235.27.111/GEOmirror/GSE2nnn/GSE2546_eSet.Rdata
   # gse='GSE2546';mirror='tercent'
+  gse=toupper(gse)
   down=ifelse(as.numeric(gsub('GSE','',gse))<1000,
               paste0('/GEOmirror/GSEnnn/',gse,
                      '_eSet.Rdata'),
