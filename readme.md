@@ -86,7 +86,7 @@ df$g=ifelse(df$P.Value>0.05,'stable',
 table(df$g)
 df$name=rownames(df)
 head(df)
-ggscatter(df, x = "logFC", y = "v", color = "g",size = 0.5,
+ggpubr::ggscatter(df, x = "logFC", y = "v", color = "g",size = 0.5,
           label = "name", repel = T,
           label.select =head(rownames(df)),
           palette = c("#00AFBB", "#E7B800", "#FC4E07") )
