@@ -74,6 +74,6 @@ n[n>2]=2
 n[n< -2]= -2
 n[1:4,1:4]
 ac=data.frame(groupList=groupList)
-rownames(ac)=colnames(n) #把ac的行名给到n的列名，即对每一个探针标记上分组信息（是'noTNBC'还是'TNBC'）
+rownames(ac)=colnames(n)
 pheatmap(n,show_colnames =F,show_rownames = F,
          annotation_col=ac)

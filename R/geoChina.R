@@ -10,11 +10,12 @@
 ##' @examples
 ##' geoChina()
 ##' geoChina('gse1009')
-##' geoChina()
+##' geoChina('GSE1009')
 ##' @export
 
 geoChina <- function(gse='GSE2546',mirror='tercent'){
   suppressPackageStartupMessages(library(GEOquery))
+  options(download.file.method="libcurl")
   # eSet=getGEO('GSE2546', destdir=".", AnnotGPL = F, getGPL = F)
   # http://49.235.27.111/GEOmirror/GSE2nnn/GSE2546_eSet.Rdata
   # gse='GSE2546';mirror='tercent'
@@ -30,7 +31,7 @@ geoChina <- function(gse='GSE2546',mirror='tercent'){
     up='http://49.235.27.111'
   }
   tpf=paste0(gse, '_eSet.Rdata')
-  download.file(paste0(up,down),tpf)
+  download.file(paste0(up,down),tpf,mode = "wb")
   suppressWarnings(load(tpf))
   return(gset)
 }
