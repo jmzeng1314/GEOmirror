@@ -20,5 +20,5 @@ geoChina('gse1009') is the same as eSet=getGEO('gse1009', getGPL = F)
 \examples{
 geoChina()
 geoChina('gse1009')
-geoChina()
+geoChina('GSE1009')
 }

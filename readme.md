@@ -2,29 +2,49 @@
 
 A package for researchers in mainland China to downlaod the GEO dataset,  which is just a **replacement** of getGEO function from GEOquery package.
 
-### just one function: geoChina
+### how to install 
 
 Install the **development version** from Github:
 
 ```r
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("GEOquery")
 library(devtools)
 install_github("jmzeng1314/GEOmirror")
 library(GEOmirror)
 ```
 
-Then use it to download GEO dataset, as below :
+If it failed, just because your bad internet. You can also download this project directly into your computer, and then **install it locally.**
+
+Or just use source function to load the codes of **geoChina** function, as below:
+
+```
+source('http://raw.githubusercontent.com/jmzeng1314/GEOmirror/master/R/geoChina.R') 
+```
+
+What if **all these 3 methods failed**? I'm so sorry, what' a pity that there's no chance for you to use our GEOmirror !!
+
+### just one function: geoChina
+
+ use it to download GEO dataset, as below :
 
 ```r
+library(GEOquery)
+library(GEOmirror)
 eSet=geoChina('GSE1009') 
 eSet=geoChina('GSE27533') 
 eSet=geoChina('GSE95166') 
 ```
 
-### easy download GEO dataset and go through downstream analysis 
+### easy download GEO dataset and go through downstream analysis
 
-Once you download the ExpressionSet of GEO dataset, you can access the expression matrix and phenotype data: 
+Once you download the ExpressionSet of GEO dataset, you can access the **expression matrix** and **phenotype data**: 
 
 ```r
+library(GEOquery)
+library(GEOmirror)
 ## download GSE95166 data
 # https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE95166
 #eSet=getGEO('GSE95166', destdir=".", AnnotGPL = F, getGPL = F)[[1]]
@@ -86,6 +106,7 @@ df$g=ifelse(df$P.Value>0.05,'stable',
 table(df$g)
 df$name=rownames(df)
 head(df)
+library(ggpubr)
 ggpubr::ggscatter(df, x = "logFC", y = "v", color = "g",size = 0.5,
           label = "name", repel = T,
           label.select =head(rownames(df)),
