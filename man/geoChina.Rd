@@ -13,9 +13,10 @@ geoChina(gse = "GSE2546", mirror = "tercent")
 a list of ExpressionSet, which contains the  expression matrix and phenotype data
 }
 \description{
-\code{geoChina} will download the expression matrix and phenotype data as ExpressionSet format from cloud in mainland China,
-it's a alternative method for getGEO function from GEOquery package.
-geoChina('gse1009') is the same as eSet=getGEO('gse1009', getGPL = F)
+\code{geoChina} will download the expression matrix and phenotype data as ExpressionSet format
+     from cloud in mainland China,
+     it's a alternative method for getGEO function from GEOquery package.
+     geoChina('gse1009') is the same as eSet=getGEO('gse1009', getGPL = F)
 }
 \examples{
 geoChina()
