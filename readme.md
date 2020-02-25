@@ -1,6 +1,6 @@
-# GEOmirror
+#  GEOmirror
 
-A package for researchers in mainland China to downlaod the GEO dataset,  which is just a **replacement** of getGEO function from GEOquery package.
+A package for researchers in mainland China to downlaod the GEO dataset,  which is just a **replacement** of **getGEO** function from **GEOquery** package.
 
 ### how to install 
 
@@ -16,7 +16,7 @@ install_github("jmzeng1314/GEOmirror")
 library(GEOmirror)
 ```
 
-If it failed, just because your bad internet. You can also download this project directly into your computer, and then **install it locally.**
+If it failed, just because your **bad internet connection**. You can also download this project directly into your computer, and then **install it locally.**
 
 Or just use source function to load the codes of **geoChina** function, as below:
 
@@ -134,6 +134,6 @@ Actually, I should change the probe ID to gene names, but it's not this package 
 
 ### warnings
 
-- 1.only the expression profiling by array datasets will be offered by our package.
-- 2.it's free for all of us, so we cann't make sure the internet connection will always be better than GEOquery. 
+- 1.only the **expression profiling by array** datasets will be offered by our package.
+- 2.it's free for all of us, so we **can not make sure** the internet connection will always be better than GEOquery. 
 
