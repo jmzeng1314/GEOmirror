@@ -2,9 +2,9 @@
 % Please edit documentation in R/geoChina.R
 \name{geoChina}
 \alias{geoChina}
-\title{Download expression dataset by GSE id}
+\title{Download from geoChina by a GSE id}
 \usage{
-geoChina(gse = "GSE2546", mirror = "tercent")
+geoChina(gse = "GSE2546", mirror = "tencent")
 }
 \arguments{
 \item{gse}{input GSE id, such as GSE1009, GSE2546, default:GSE2546}
@@ -13,13 +13,14 @@ geoChina(gse = "GSE2546", mirror = "tercent")
 a list of ExpressionSet, which contains the  expression matrix and phenotype data
 }
 \description{
-\code{geoChina} will download the expression matrix and phenotype data as ExpressionSet format
-     from cloud in mainland China,
-     it's a alternative method for getGEO function from GEOquery package.
-     geoChina('gse1009') is the same as eSet=getGEO('gse1009', getGPL = F)
+\code{geoChina} will download the expression matrix and phenotype data as an object in ExpressionSet format
+     from cloud in mainland China, so it will be a little fast for users in mainland China.
+     So far, only tencent mirror for our geoChina.
+     it's just a alternative method for getGEO function from GEOquery package.
+     geoChina('GSE1009') is the same as eSet=getGEO('GSE1009', getGPL = F)
 }
 \examples{
 geoChina()
-geoChina('gse1009')
 geoChina('GSE1009')
+geoChina('GSE2546')
 }
